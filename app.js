@@ -32,11 +32,12 @@ const resetGame = () => {
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
-      //playerO
+      
       box.innerText = "O";
+      box.style.color = "#E056FD"
       turnO = false;
     } else {
-      //playerX
+     
       box.innerText = "X";
       turnO = true;
     }
@@ -77,6 +78,8 @@ const showWinner = (winner) => {
   if (winner === "O") {
       scoreO++;
       scoreOEl.innerText = scoreO;
+      scoreOEl.style.color = "#E056FD";
+      
   } else {
       scoreX++;
       scoreXEl.innerText = scoreX;
