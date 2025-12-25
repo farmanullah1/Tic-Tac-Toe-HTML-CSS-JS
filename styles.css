@@ -29,9 +29,30 @@ body {
 }
 
 .box {
+    background-color: #1c2541;
     height: 18vmin;
     width: 18vmin;
     border-radius: 1rem;
     border: none;
-    box-shadow: 0 0 1rem rgb(0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 8vmin;
+    color: #ffffff;
+}
+
+.reset-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #1c2541; 
+    color: #6fffe9;           
+    border: 2px solid #6fffe9; 
+    border-radius: 50px;       
+    cursor: pointer;
+    margin-top: 2rem;         
+    transition: 0.3s ease;   
+}
+
+#reset-btn:hover {
+    background-color: #6fffe9;
+    color: #0b132b;
+    box-shadow: 0 0 15px #6fffe9; 
 }
