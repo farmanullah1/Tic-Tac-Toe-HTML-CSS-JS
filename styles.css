@@ -1,18 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
 }
 
-.game-name {
-    color: white;
-}
 body {
-    background-color: #0b132b;
+    background: radial-gradient(circle at center, #1c2541 0%, #0b132b 100%);
     text-align: center;
+    min-height: 100vh;
 }
+
+h1 {
+    color: #6fffe9;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(111, 255, 233, 0.4); 
+}
+
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.score-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.score-box span {
+    color: #6fffe9;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-left: 8px;
+}
+
 
 .container {
-    height: 70vh;
+    height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,25 +74,76 @@ body {
     width: 18vmin;
     border-radius: 1rem;
     border: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-size: 8vmin;
-    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    font-size: 10vmin;
+    color: #6fffe9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.box:hover {
+    background-color: #26365D; 
+    transform: scale(1.02);    
+    box-shadow: 0 0 15px rgba(111, 255, 233, 0.2);
+}
+
+
+.reset-btn, .new-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: #6fffe9;
+    border: 2px solid #6fffe9;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .reset-btn {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: #1c2541; 
-    color: #6fffe9;           
-    border: 2px solid #6fffe9; 
-    border-radius: 50px;       
-    cursor: pointer;
-    margin-top: 2rem;         
-    transition: 0.3s ease;   
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-#reset-btn:hover {
+.reset-btn:hover, .new-btn:hover {
     background-color: #6fffe9;
     color: #0b132b;
-    box-shadow: 0 0 15px #6fffe9; 
+    box-shadow: 0 0 20px rgba(111, 255, 233, 0.6);
+    transform: translateY(-2px);
+}
+
+
+.msg-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(11, 19, 43, 0.9); 
+    backdrop-filter: blur(8px); 
+    z-index: 100;
+}
+
+#msg {
+    color: #ffffff;
+    font-size: 8vmin;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
